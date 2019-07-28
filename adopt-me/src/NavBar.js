@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "@reach/router";
 import { css, keyframes } from "@emotion/core";
+import colors from "./colors";
 
 const Spin = keyframes`
   to {
@@ -14,7 +15,7 @@ const NavBar = () => {
     <header
       onClick={() => setPadding(padding + 20)}
       css={css`
-        background-color: #333;
+        background-color: ${colors.secundary};
         padding: ${padding}px;
         margin-bottom: 15px;
         border-radius: 0 0 5px 5px;
@@ -33,8 +34,12 @@ const NavBar = () => {
       <span
         css={css`
           display: inline-block;
+
           animation: 1s ${Spin} linear infinite;
           font-size: 60px;
+          &:hover {
+            text-decoration: underline;
+          }
         `}
         aria-label="logo"
         role="img"
